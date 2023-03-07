@@ -1,0 +1,46 @@
+---
+- id: "d874b04d-c460-4c0e-84c8-113c7b549769"
+  movieName: "Shrek"
+  description: "A mean lord exiles fairytale creatures to the swamp of a grumpy ogre,\
+    \ who must go on a quest and rescue a princess for the lord in order to get his\
+    \ land back."
+  actors:
+  - "Mike Myers"
+  - "Eddie Murphy"
+  - "Cameron Diaz"
+  releaseDate: 995036268208
+  category: "ANIMATION"
+  priceClass: 1.99
+- id: "e7816728-d54b-4599-a3cd-6f6932ae7385"
+  movieName: "House of Gucci"
+  description: "When Patrizia Reggiani, an outsider from humble beginnings, marries\
+    \ into the Gucci family, her unbridled ambition begins to unravel their legacy\
+    \ and triggers a reckless spiral of betrayal, decadence, revenge, and ultimately...murder."
+  actors:
+  - "Lady Gaga"
+  - "Adam Driver"
+  - "Al Pacino"
+  releaseDate: 1637510268209
+  category: "DRAMA"
+  priceClass: 3.49
+- id: "7869b624-8ce2-47a6-983c-a2996b526d18"
+  movieName: "Dolittle"
+  description: "A physician who can talk to animals embarks on an adventure to find\
+    \ a legendary island with a young apprentice and a crew of strange pets."
+  actors:
+  - "Robert Downey Jr."
+  - "An"
+  - "Al Pacino"
+  releaseDate: 1584806268209
+  category: "DRAMA"
+  priceClass: 3.49
+- id: "e6686b95-89d7-4f5f-b0c7-d2fcffac0e0f"
+  movieName: "Triangle of Sadness"
+  description: "A fashion model celebrity couple join an eventful cruise for the super-rich."
+  actors:
+  - "Harris Dickinson"
+  - "Charlbi Dean"
+  - "Dolly de Leon"
+  releaseDate: 1665759468209
+  category: "COMEDY"
+  priceClass: 5.0
