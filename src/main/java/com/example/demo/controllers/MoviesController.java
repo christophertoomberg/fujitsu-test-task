@@ -3,7 +3,6 @@ package com.example.demo.controllers;
 import com.example.demo.models.Movie;
 import com.example.demo.models.MovieDAO;
 import com.example.demo.models.Rental;
-import com.example.demo.repositories.RentalRepository;
 import com.example.demo.services.MovieService;
 import com.example.demo.services.RentalService;
 import org.springframework.http.ResponseEntity;
@@ -33,19 +32,19 @@ public class MoviesController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Movie> getMovieById(@Valid @PathVariable("id") UUID id) throws IOException {
+    public ResponseEntity<Movie> getMovieById(@PathVariable("id") UUID id) throws IOException {
         Optional<Movie> possibleMovie = movieService.findMovieById(id);
         return possibleMovie.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @GetMapping("/search")
-    public ResponseEntity<Movie> searchForMovieByName(@Valid @RequestParam String name) throws IOException {
+    public ResponseEntity<Movie> searchForMovieByName(@RequestParam String name) throws IOException {
         Optional<Movie> possibleMovie = movieService.findMovieByName(name);
         return possibleMovie.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @GetMapping("/filter")
-    public ResponseEntity<List<Movie>> filterMoviesByCategory(@Valid @RequestParam Movie.MovieCategory movieCategory) throws IOException {
+    public ResponseEntity<List<Movie>> filterMoviesByCategory(@RequestParam Movie.MovieCategory movieCategory) throws IOException {
         return ResponseEntity.ok(movieService.filterMoviesByCategory(movieCategory));
     }
 
@@ -60,17 +59,17 @@ public class MoviesController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteMovieById(@Valid @PathVariable("id") UUID id) throws IOException {
+    public void deleteMovieById(@PathVariable("id") UUID id) throws IOException {
         movieService.deleteMovie(id);
     }
 
     @PutMapping("/{id}")
-    public void updateMovieById(@Valid @PathVariable("id") UUID id, @Valid @RequestBody MovieDAO movie) throws IOException {
+    public void updateMovieById(@PathVariable("id") UUID id, @Valid @RequestBody MovieDAO movie) throws IOException {
         movieService.updateMovie(id, movie);
     }
 
     @PostMapping("/rent")
-    public ResponseEntity<Rental> rentMovie(@Valid @RequestParam int rentalDurationInWeeks, @Valid @RequestParam UUID id) throws IOException {
+    public ResponseEntity<Rental> rentMovie(@RequestParam int rentalDurationInWeeks, @RequestParam UUID id) throws IOException {
         Optional<Movie> movie = movieService.findMovieById(id);
         if (movie.isEmpty()) {
             return ResponseEntity.notFound().build();

@@ -83,7 +83,7 @@ public class MovieRentalTests {
 
         rentalService.rentMovie(oldMovie, 4, currentDate.getTimeInMillis());
 
-        assertThat(rentalService.getRentals().get(0).getRentalPrice()).isEqualTo(4 * 2.0);
+        assertThat(rentalService.getRentals().get(0).getRentalPrice()).isEqualTo(4 * 5.0);
     }
 
     @Test

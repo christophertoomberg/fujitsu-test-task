@@ -22,18 +22,16 @@ public class RentalDatabaseService {
     public List<Rental> getRentals() throws IOException {
         return loadRentals();
     }
-    public Rental insertRentalForMovie(Rental rental) throws IOException {
-        addItem(rental);
-        return rental;
-    }
 
-    public void addItem(Rental rentalToBeAdded) throws IOException {
+    public Rental insertRentalForMovie(Rental rentalToBeAdded) throws IOException {
         List<Rental> loadedRentals = loadRentals();
         loadedRentals.add(rentalToBeAdded);
         rentals = loadedRentals;
 
         saveRentals();
         rentals.clear();
+
+        return rentalToBeAdded;
     }
 
     private List<Rental> loadRentals() throws IOException {

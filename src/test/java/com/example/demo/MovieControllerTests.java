@@ -19,7 +19,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class WebLayerTest {
+public class MovieControllerTests {
 
 
     @Autowired
@@ -27,6 +27,7 @@ public class WebLayerTest {
 
 
     // RUN insertMoviesToJsonAndYamlAndUseJson() (first method) in MovieDatabaseServiceTests before running the tests here.
+    // It ensures that the databases are correctly populated for these test cases to work.
     @Test
     @Order(1)
     public void getMovies() throws IOException {
